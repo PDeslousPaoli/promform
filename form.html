@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="stylesheet" type="text/css" href="form.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+  <title>Prom form</title>
   <script src="form.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="text">
+      Prom
+    </div>
+    <form action="welldone.html" method="post"> <!-- on affiche la page welldone .html à la validation du form -->
+      <div class="form-row">
+        <div class="input-data">
+          <input type="text" id="first-name" required>
+          <div class="underline"></div>
+          <label for="first-name">Prénom</label>
+        </div>
+        <div class="input-data">
+          <input type="text" id="last-name" required>
+          <div class="underline"></div>
+          <label for="last-name">Nom</label>
+        </div>
+      </div>
+      <div class="form-row" id="max">
+        <div class="input-data" id="select">
+          <label for="promo">Promotion</label>
+          <br />
+          <select id="promo" name="choix">
+            <option value="doria">Doria Shafik</option>
+            <option value="doris">Doris Stauffer</option>
+            <option value="eliza">Elizabeth Feinler</option>
+          </select>
+        </div>
+        <div class="input-data2">
+          <p>Sera présent:</p>
+          <div class="choice">
+            <div>
+              <input type="radio" id="contactChoice1" name="contact" value="oui" />
+              <label for="contactChoice1">Oui</label>
+            </div>
+            <div>
+              <input type="radio" id="contactChoice2" name="contact" value="non" />
+              <label for="contactChoice2">Non</label>
+            </div>
+            <div>
+              <input type="radio" id="contactChoice2" name="contact" value="non" />
+              <label for="contactChoice2">Ne se prononce pas</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-data textarea">
+          <textarea rows="8" cols="80" required></textarea>
+          <br />
+          <div class="underline"></div>
+          <label for="">Write your message</label>
+          <br />
+          <div class="form-row submit-btn">
+            <div class="input-data">
+              <div class="inner"></div>
+              <input type="submit" value="submit">
+            </div>
+          </div>
+          <div class="thx">
+            <p>Merci !</p>
+          </div>
+    </form>
+  </div>
 </body>
+
 </html>

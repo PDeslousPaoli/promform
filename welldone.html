@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="form.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci</title>
+</head>
+
+<body>
+    <script>
+        // on récupère les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        // on récupère la valeur du champ "first-name" du formulaire
+        const prenom = urlParams.get('first-name');
+        const presence = urlParams.get('attend');
+
+        // on modifie le contenu de la page en fonction des réponses du formulaire
+        document.body.innerHTML = `<h1>Merci, ${prenom} !</h1>`;
+
+        if (presence === "oui") {
+            // si attend = oui, on affiche une info +    
+            document.body.innerHTML += "Génial, rendez-vous vendredi à partir de 17h !";
+
+        } else if (presence === "non") {
+            // si attend = non, on affiche nos regrets
+            document.body.innerHTML += "Zut, on aurait bien aimé te voir, belle fin de semaine !";
+
+        } else {
+            // si attend = nsp, on donne un délai
+            document.body.innerHTML += "On espère te voir, n'hésite pas à remplir de nouveau le formulaire dès que tu en sais plus ! (de préférence avant mercredi, car ensuite nous faisons les courses)"
+        }    
+    </script>
+</body>
+
+</html>
