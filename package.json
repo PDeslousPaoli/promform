@@ -1,0 +1,19 @@
+{
+  "name": "promform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "promform"
+  },
+  "keywords": [
+    "form",
+    "promo"
+  ],
+  "author": "",
+  "license": "ISC"
+}
