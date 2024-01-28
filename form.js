@@ -1,5 +1,8 @@
-import { createClient } from '@supabase/supabase-js';
-const supabase = createClient("https://xhfbydwixbaamsgmbfld.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhoZmJ5ZHdpeGJhYW1zZ21iZmxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY0NDg3NzQsImV4cCI6MjAyMjAyNDc3NH0.in6Cv-ZWHropWriPvid6JDSaJlwmQBk_7PrL9hQeJWc");
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 const form = document.getElementById("register");
 // const present = [];
@@ -8,17 +11,17 @@ const form = document.getElementById("register");
 let firstName, lastName, promo, attend, cake, message, fullName;
 
 // on écoute la validation du form
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
   console.log('clic clic');
   // on récupère les valeurs des inputs
-   firstName = document.getElementById("first-name").value;
-   lastName = document.getElementById("last-name").value;
-   promo = document.getElementById("promo").value;
-   attend = document.querySelector('input[name="attend"]:checked').value;
-   cake = document.querySelector('input[name="cake"]:checked').value;
-   message = document.getElementById("message").value;
-   fullName = firstName + " " + lastName;
+  firstName = document.getElementById("first-name").value;
+  lastName = document.getElementById("last-name").value;
+  promo = document.getElementById("promo").value;
+  attend = document.querySelector('input[name="attend"]:checked').value;
+  cake = document.querySelector('input[name="cake"]:checked').value;
+  message = document.getElementById("message").value;
+  fullName = firstName + " " + lastName;
 
   addRegistration()
   // let reponse = [fullName, promo, attend, cake, message];
