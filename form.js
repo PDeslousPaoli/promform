@@ -1,13 +1,10 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from './node_modules/@supabase/supabase-js';
 
-const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co';
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const form = document.getElementById("register");
-// const present = [];
-// const absent = [];
-// const nsp = [];
 let firstName, lastName, promo, attend, cake, message, fullName;
 
 // on écoute la validation du form
@@ -24,18 +21,6 @@ form.addEventListener("submit", function (event) {
   fullName = firstName + " " + lastName;
 
   addRegistration()
-  // let reponse = [fullName, promo, attend, cake, message];
-  // console.log("reponse:", reponse);
-  // if (attend === "yes") {
-  //   present.push(reponse);
-  // } else if (attend === "no") {
-  //   absent.push(reponse);
-  // } else {
-  //   nsp.push(reponse);
-  // }
-  // console.log("ok:", present);
-  // console.log("non:", absent);
-  // console.log("nsp:", nsp);
 });
 
 async function addRegistration() {
