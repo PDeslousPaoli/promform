@@ -1,28 +1,59 @@
-const button = document.querySelector("button");
-const present = [];
-const absent = [];
-const nsp = [];
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient("https://xhfbydwixbaamsgmbfld.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhoZmJ5ZHdpeGJhYW1zZ21iZmxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY0NDg3NzQsImV4cCI6MjAyMjAyNDc3NH0.in6Cv-ZWHropWriPvid6JDSaJlwmQBk_7PrL9hQeJWc");
+
+const form = document.getElementById("register");
+// const present = [];
+// const absent = [];
+// const nsp = [];
+let firstName, lastName, promo, attend, cake, message, fullName;
 
 // on écoute la validation du form
-button.addEventListener("click", function() {
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
+  console.log('clic clic');
   // on récupère les valeurs des inputs
-  let firstName = document.getElementById("first-name").value;
-  let lastName = document.getElementById("last-name").value;
-  let name = firstName + lastName;
-  let promo = document.getElementById("promo").value;
-  let attend = document.getElementById("attend").value;
-  let cake = document.getElementById("cake").value;
-  let message = document.getElementById("message").value;
-  let reponse = [name, promo, attend, cake, message];
+   firstName = document.getElementById("first-name").value;
+   lastName = document.getElementById("last-name").value;
+   promo = document.getElementById("promo").value;
+   attend = document.querySelector('input[name="attend"]:checked').value;
+   cake = document.querySelector('input[name="cake"]:checked').value;
+   message = document.getElementById("message").value;
+   fullName = firstName + " " + lastName;
 
-  if (attend === "yes") {
-    present.push(reponse);
-  } else if (attend === "no") {
-    absent.push(reponse);
-  } else {
-    nsp.push(reponse);
-  }
-  console.log("ok:", present);
-  console.log("non:", absent);
-  console.log("nsp:", nsp);
+  addRegistration()
+  // let reponse = [fullName, promo, attend, cake, message];
+  // console.log("reponse:", reponse);
+  // if (attend === "yes") {
+  //   present.push(reponse);
+  // } else if (attend === "no") {
+  //   absent.push(reponse);
+  // } else {
+  //   nsp.push(reponse);
+  // }
+  // console.log("ok:", present);
+  // console.log("non:", absent);
+  // console.log("nsp:", nsp);
 });
+
+async function addRegistration() {
+  try {
+    const registration = {
+      first_name: firstName,
+      last_name: lastName,
+      name: fullName,
+      promotion: promo,
+      attendance: attend,
+      cake: cake,
+      message: message,
+    };
+    console.log("infos:", registration);
+    const { data, error } = await supabase
+      .from("registrations")
+      .insert(registration);
+    //redirect to new event page (trouver comment faire en vanilla)
+    // await navigateTo(`/mapage`);
+    if (error) throw error;
+  } catch (error) {
+    alert(error.message);
+  }
+}
