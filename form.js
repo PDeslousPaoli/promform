@@ -15,11 +15,14 @@ button.addEventListener("click", function() {
   let message = document.getElementById("message").value;
   let reponse = [name, promo, attend, cake, message];
 
-  if (attend === "oui") {
+  if (attend === "yes") {
     present.push(reponse);
-  } else if (attend === "non") {
+  } else if (attend === "no") {
     absent.push(reponse);
   } else {
     nsp.push(reponse);
   }
+  console.log("ok:", present);
+  console.log("non:", absent);
+  console.log("nsp:", nsp);
 });

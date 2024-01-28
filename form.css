@@ -157,15 +157,28 @@ form .form-row .textarea{
 }
 
 .choice {
-  margin: 0 20px;
-  bottom:0px;
+  margin: 0 20px; /* Ajoutez une marge si nécessaire */
+  width: 100%;   /* Ajustez la largeur selon vos besoins */
+  display: flex; /* Utilisez flexbox pour aligner les éléments enfants sur une seule ligne */
+  flex-direction: column; /* Arrangez les éléments enfants en colonne */
 }
 
+
 .choice label {
-  display: block;
+  display: inline-block;
   margin-bottom: 8px; /* Adjust spacing between choices */
 }
 
 .choice input[type="radio"] {
   margin-right: 5px; /* Adjust spacing between radio button and label */
+}
+
+#radioChoice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-data2 {
+  flex: 1; /* Utilisez flex-grow pour faire en sorte que les deux div aient une largeur égale */
+  margin-right: 10px; /* Ajoutez une marge entre les deux div */
 }

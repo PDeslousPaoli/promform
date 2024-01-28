@@ -6,16 +6,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prom form</title>
-  <script src="form.js"></script>
 </head>
 
 <body>
 
   <div class="container">
     <div class="text">
-      Prom
+      Ada Paris Prom January'24
     </div>
-    <form action="welldone.html" method="POST"> <!-- on affiche la page welldone .html à la validation du form / NAN à modifier -->
+    <form action="welldone.html" method="POST">
+      <!-- on affiche la page welldone .html à la validation du form / NAN à modifier -->
       <div class="form-row">
         <div class="input-data">
           <input type="text" id="first-name" required>
@@ -28,6 +28,7 @@
           <label for="last-name">Nom</label>
         </div>
       </div>
+
       <div class="form-row" id="max">
         <div class="input-data" id="select">
           <label for="promo">Promotion</label>
@@ -38,30 +39,55 @@
             <option value="eliza">Elizabeth Feinler</option>
           </select>
         </div>
+      </div>
+
+      <div class="form-row" id="radioChoice">
+
         <div class="input-data2">
-          <p>Sera présent:</p>
           <div class="choice">
+            <p>Tu participes ?</p>
+
             <div>
-              <input type="radio" id="contactChoice1" name="contact" value="oui" />
-              <label for="contactChoice1">Oui</label>
+              <input type="radio" id="attendChoice1" name="attend" value="yes" />
+              <label for="attendChoice1">Oui</label>
             </div>
             <div>
-              <input type="radio" id="contactChoice2" name="contact" value="non" />
-              <label for="contactChoice2">Non</label>
+              <input type="radio" id="attendChoice2" name="attend" value="no" />
+              <label for="attendChoice2">Non</label>
             </div>
             <div>
-              <input type="radio" id="contactChoice2" name="contact" value="non" />
-              <label for="contactChoice2">Ne se prononce pas</label>
+              <input type="radio" id="attendChoice3" name="attend" value="idk" />
+              <label for="attendChoice3">Ne sais pas</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-data2">
+          <div class="choice">
+            <p>Peux-tu apporter un cake maison ?</p>
+
+            <div>
+              <input type="radio" id="cakeChoice1" name="cake" value="savoury" />
+              <label for="cakeChoice1">Oui, salé</label>
+            </div>
+            <div>
+              <input type="radio" id="cakeChoice2" name="cake" value="sweet" />
+              <label for="cakeChoice2">Oui, sucré</label>
+            </div>
+            <div>
+              <input type="radio" id="cakeChoice3" name="cake" value="none" />
+              <label for="cakeChoice3">Non</label>
             </div>
           </div>
         </div>
       </div>
+
       <div class="form-row">
         <div class="input-data textarea">
-          <textarea rows="8" cols="80" required></textarea>
+          <textarea id="message" rows="8" cols="80" required></textarea>
           <br />
           <div class="underline"></div>
-          <label for="">Write your message</label>
+          <label for="message">Un message ?</label>
           <br />
           <div class="form-row submit-btn">
             <div class="input-data">
@@ -69,9 +95,13 @@
               <input type="submit" value="submit">
             </div>
           </div>
-          
+        </div>
+      </div>
+
     </form>
   </div>
+  <script src="form.js"></script>
+
 </body>
 
 </html>
