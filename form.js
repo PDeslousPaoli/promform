@@ -1,8 +1,8 @@
-// import { createClient } from './node_modules/@supabase/supabase-js/dist/module/index.js';
+import { createClient } from '@supabase/supabase-js';
 
-// const supabaseUrl = process.env.SUPABASE_URL;
-// const supabaseKey = process.env.SUPABASE_ANON_KEY;
-// const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = https://xhfbydwixbaamsgmbfld.supabase.co;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const form = document.getElementById("register");
 let firstName, lastName, promo, attend, cake, message, fullName;
