@@ -1,11 +1,8 @@
-// import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co';
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhoZmJ5ZHdpeGJhYW1zZ21iZmxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY0NDg3NzQsImV4cCI6MjAyMjAyNDc3NH0.in6Cv-ZWHropWriPvid6JDSaJlwmQBk_7PrL9hQeJWc';
+const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 const form = document.getElementById("register");
 let firstName, lastName, promo, attend, cake, message, fullName;
-
 // on écoute la validation du form
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
@@ -19,10 +16,8 @@ form.addEventListener("submit", function (event) {
   message = document.getElementById("message").value;
   fullName = firstName + " " + lastName;
   console.log("name:", fullName);
-
   addRegistration()
 });
-
 async function addRegistration() {
   try {
     const registration = {
@@ -35,7 +30,7 @@ async function addRegistration() {
       message: message,
     };
     console.log("infos:", registration);
-    const { data, error } = await supabase
+    const { data, error } = await _supabase
       .from("registrations")
       .insert(registration);
     //redirect to new event page (trouver comment faire en vanilla)
