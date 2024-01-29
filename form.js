@@ -1,8 +1,8 @@
-import { createClient } from './node_modules/@supabase/supabase-js/dist/module/index.js';
+// import { createClient } from './node_modules/@supabase/supabase-js/dist/module/index.js';
 
-const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co';
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// const supabaseUrl = process.env.SUPABASE_URL;
+// const supabaseKey = process.env.SUPABASE_ANON_KEY;
+// const supabase = createClient(supabaseUrl, supabaseKey);
 
 const form = document.getElementById("register");
 let firstName, lastName, promo, attend, cake, message, fullName;
@@ -19,6 +19,7 @@ form.addEventListener("submit", function (event) {
   cake = document.querySelector('input[name="cake"]:checked').value;
   message = document.getElementById("message").value;
   fullName = firstName + " " + lastName;
+  console.log("name:", fullName);
 
   addRegistration()
 });
