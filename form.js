@@ -33,8 +33,8 @@ async function addRegistration() {
     const { data, error } = await _supabase
       .from("registrations")
       .insert(registration);
-    //redirect to new event page (trouver comment faire en vanilla)
-    // await navigateTo(`/mapage`);
+    window.location.href = 'welldone.html';
+
     if (error) throw error;
   } catch (error) {
     alert(error.message);
