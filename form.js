@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from './node_modules/@supabase/supabase-js';
 
 const supabaseUrl = 'https://xhfbydwixbaamsgmbfld.supabase.co';
 const supabaseKey = process.env.SUPABASE_KEY;
