@@ -194,6 +194,9 @@ form .form-row .textarea {
   /* Arrangez les éléments enfants en colonne */
 }
 
+.choice p {
+  margin: 10px 0 10px 0;
+}
 
 .choice label {
   display: inline-block;

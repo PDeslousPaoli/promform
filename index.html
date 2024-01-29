@@ -33,10 +33,10 @@
           <label for="promo">Promotion</label>
           <br />
           <select id="promo" name="choix">
-            <option value="eliza">Emma Watson</option>
-            <option value="eliza">Elizabeth Feinler</option>
-            <option value="doris">Doris Stauffer</option>
-            <option value="doria">Doria Shafik</option>
+            <option value="eliza">Emma Watson &#x1FA84; </option>
+            <option value="eliza">Elizabeth Feinler &#127760;</option>
+            <option value="doris">Doris Stauffer &#128032;</option>
+            <option value="doria">Doria Shafik &#128499;</option>
           </select>
         </div>
       </div>
@@ -48,7 +48,7 @@
             <p>Tu participes ?</p>
 
             <div>
-              <input type="radio" id="attendChoice1" name="attend" value="yes" />
+              <input type="radio" id="attendChoice1" name="attend" value="yes" required />
               <label for="attendChoice1">Oui</label>
             </div>
             <div>
@@ -67,7 +67,7 @@
             <p>Peux-tu apporter un cake maison ?</p>
 
             <div>
-              <input type="radio" id="cakeChoice1" name="cake" value="savoury" />
+              <input type="radio" id="cakeChoice1" name="cake" value="savoury" required/>
               <label for="cakeChoice1">Oui, salé</label>
             </div>
             <div>
@@ -84,7 +84,7 @@
 
       <div class="form-row">
         <div class="input-data textarea">
-          <textarea id="message" rows="8" cols="80" required></textarea>
+          <textarea id="message" rows="8" cols="80"></textarea>
           <br />
           <div class="underline"></div>
           <label for="message">Un message ?</label>
