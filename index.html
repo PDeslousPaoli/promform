@@ -15,8 +15,6 @@
       Ada Paris Prom January'24
     </div>
     <form id="register">
-    <!-- <form action="welldone.html" method="POST"> -->
-      <!-- on affiche la page welldone .html à la validation du form / NAN à modifier -->
       <div class="form-row">
         <div class="input-data">
           <input type="text" id="first-name" required>
@@ -32,12 +30,17 @@
 
       <div class="form-row" id="max">
         <div class="input-data" id="select">
-          <label for="promo">Promotion</label>
+          <label for="promo">Promotion/Staff</label>
           <br />
           <select id="promo" name="choix">
-            <option value="doria">Doria Shafik</option>
-            <option value="doris">Doris Stauffer</option>
-            <option value="eliza">Elizabeth Feinler</option>
+            <option value="emma">Emma Watson &#x1FA84; </option>
+            <option value="eliza">Elizabeth Feinler &#127760;</option>
+            <option value="doris">Doris Stauffer &#128032;</option>
+            <option value="doria">Doria Shafik &#128499;</option>
+            <option value="staff">Staff &#128029;</option>
+            <option value="encadrante">Encadrant-e &#128081;	</option>
+
+
           </select>
         </div>
       </div>
@@ -49,7 +52,7 @@
             <p>Tu participes ?</p>
 
             <div>
-              <input type="radio" id="attendChoice1" name="attend" value="yes" />
+              <input type="radio" id="attendChoice1" name="attend" value="yes" required />
               <label for="attendChoice1">Oui</label>
             </div>
             <div>
@@ -58,7 +61,7 @@
             </div>
             <div>
               <input type="radio" id="attendChoice3" name="attend" value="idk" />
-              <label for="attendChoice3">Ne sais pas</label>
+              <label for="attendChoice3">Ne sait pas</label>
             </div>
           </div>
         </div>
@@ -68,7 +71,7 @@
             <p>Peux-tu apporter un cake maison ?</p>
 
             <div>
-              <input type="radio" id="cakeChoice1" name="cake" value="savoury" />
+              <input type="radio" id="cakeChoice1" name="cake" value="savoury" required />
               <label for="cakeChoice1">Oui, salé</label>
             </div>
             <div>
@@ -85,23 +88,24 @@
 
       <div class="form-row">
         <div class="input-data textarea">
-          <textarea id="message" rows="8" cols="80" required></textarea>
+          <textarea id="message" rows="8" cols="80"></textarea>
           <br />
           <div class="underline"></div>
           <label for="message">Un message ?</label>
           <br />
-          <div class="form-row submit-btn">
-            <div class="input-data">
-              <div class="inner"></div>
-              <input type="submit" value="submit">
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="form-row submit-btn">
+        <div class="input-data">
+          <div class="inner"></div>
+          <input type="submit" value="submit">
         </div>
       </div>
 
     </form>
   </div>
-  <script type="module" src="/form.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="form.js"></script>
 
 </body>
 
